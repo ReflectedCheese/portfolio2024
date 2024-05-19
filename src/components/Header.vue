@@ -2,7 +2,29 @@
   <nav>
     <div class="header">
       <router-link to="/">
-        <img src="/sw.svg" class="logo" />
+        <img class="light" src="/src/images/sw-light.svg" id="logo" />
+        <img class="dark" src="/src/images/sw-dark.svg" id="logo" />
+        <div class="dark-mode-toggle">
+          <button
+            class="icon"
+            onclick="document.body.classList.toggle('dark-mode')"
+          >
+            <img
+              class="light"
+              src="/src/images/sun-light.svg"
+              width="24"
+              height="24"
+              alt="lightmode"
+            />
+            <img
+              class="dark"
+              src="/src/images/moon-dark.svg"
+              width="24"
+              height="24"
+              alt="darkmode"
+            />
+          </button>
+        </div>
       </router-link>
       <div class="menu">
         <a href="/" class="work">work</a>
@@ -28,6 +50,12 @@ nav {
   z-index: 1;
 }
 
+button.icon {
+  background-color: transparent;
+  border: none;
+  padding: 1 0 1 0rem;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -36,27 +64,26 @@ nav {
   width: 100%;
   gap: 2rem;
   z-index: 5;
-  
 }
 
-.logo {
-  padding-left: 1rem;
+#logo {
+  padding: 30px;
   top: 0;
-  left: 0;
+  left: 5rem;
   width: 50px;
   margin-top: 10px;
   z-index: 2;
 }
 
-.links{
-  padding-right: 1rem;
+.links {
+  padding: 1 0 1 0rem;
 }
 
 .menu {
   justify-content: flex-end;
   display: flex;
   flex-wrap: nowrap;
-  border: 2px solid rgba(14, 13, 13, 0.153);
+  border: 2px solid var(--text-secondary-color);
   padding: 5px;
   border-radius: 40px;
   z-index: 1;

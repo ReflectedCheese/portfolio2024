@@ -1,26 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
+  /* light variables */
+  --text-primary-color: #000000;
+  --text-secondary-color: #000000ac;
   --background-image: url(/images/adrien-olichon-RCAhiGJsUUE-LIGHT.jpg);
-  --background-repeat: no-repeat;
-  --background-color-primary: #ffffff;
-  --text-primary-color: #232323;
+  --background-color: #ffffff;
+
+  /* dark variables */
+  --text-primary-color-dark: #ffffff;
+  --text-secondary-color-dark: #ffffffbb;
+  --background-image-dark: url(/images/adrien-olichon-RCAhiGJsUUE-unsplash.jpg);
+  --background-color-dark: #000000;
+}
+
+.dark-mode {
+  --text-primary-color: var(--text-primary-color-dark);
+  --text-secondary-color: var(--text-secondary-color-dark);
+  --background-image: var(--background-image-dark);
+  --background-color: var(--background-color-dark);
+}
+
+img.dark {
+  display: none;
+}
+
+.dark-mode img.dark {
+  display: block;
+}
+
+.dark-mode img.light {
+  display: none;
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  top: 34px;
+  right: 15%;
+  cursor: pointer;
+  transform: translateX(-50%);
+  /* border: 2px solid  var(--text-secondary-color);
+  padding: 5px 40px 5px 5px;
+  border-radius: 50px; */
+}
+
+.icon{
+  padding: 3px;
+}
+
+body {
   font-family: "Roboto", system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 100;
-
-  color-scheme: light;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-:root.dark-theme {
---background-image: url(/images/adrien-olichon-RCAhiGJsUUE-unsplash.jpg);
---background-repeat: no-repeat;
---background-color-primary: #ffffff;
---text-primary-color: #ffffff;
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
 }
 a {
   font-weight: 500;
@@ -35,7 +71,7 @@ body {
   background-image: var(--background-image);
   margin: 0;
   display: flex;
-
+  color: var(--text-primary-color);
   min-width: 320px;
   min-height: 100vh;
 }
@@ -53,7 +89,7 @@ h1 {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color:var(--text-primary-color);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -64,7 +100,7 @@ h1 {
 
 .work:hover,
 .about:hover {
-  background-color: rgba(225, 225, 225, 0.121);
+  background-color: var(--text-secondary-color);
 }
 
 .about:active {
