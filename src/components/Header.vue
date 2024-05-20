@@ -11,14 +11,14 @@
           >
             <img
               class="light"
-              src="/src/images/sun-light.svg"
+              src="/src/images/sun-dark.svg"
               width="24"
               height="24"
               alt="lightmode"
             />
             <img
               class="dark"
-              src="/src/images/moon-dark.svg"
+              src="/src/images/moon-light.svg"
               width="24"
               height="24"
               alt="darkmode"
@@ -64,6 +64,7 @@ button.icon {
   width: 100%;
   gap: 2rem;
   z-index: 5;
+  
 }
 
 #logo {
